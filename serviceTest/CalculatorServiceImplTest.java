@@ -13,7 +13,6 @@ public class CalculatorServiceImplTest {
     String num3 = "30";
     String num4 = "0";
 
-
     @Test
     public void shouldReturnGreeting() {
         Assertions.assertEquals("Добро пожаловать в калькулятор", calculatorService.toGreet());
