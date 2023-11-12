@@ -51,3 +51,5 @@ public class CalculatorServiceImplTest {
         Assertions.assertEquals("деление на 0", exception.getMessage());
     }
 }
+
+
