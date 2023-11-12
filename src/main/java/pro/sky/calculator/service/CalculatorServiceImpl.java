@@ -1,7 +1,7 @@
-package pro.sky.calculator;
+package pro.sky.calculator.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pro.sky.calculator.service.CalculatorService;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
@@ -45,11 +45,11 @@ public class CalculatorServiceImpl implements CalculatorService {
     public String toDivideTwoNumbers(String  a, String b) {
         try {
             int div = Integer.parseInt(a) / Integer.parseInt(b);
-            return  "" + a + " * " + b + " = " + div;
+            return  "" + a + " / " + b + " = " + div;
         }
-        catch (Exception exception) {
+        catch (ArithmeticException exception) {
             exception.printStackTrace();
-            return "Неверный тип параметра - необходимо указать число/ либо деление на 0";
+            throw new ArithmeticException("деление на 0");
         }
     }
 }
